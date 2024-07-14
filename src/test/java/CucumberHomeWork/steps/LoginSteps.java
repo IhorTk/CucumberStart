@@ -39,8 +39,21 @@ public class LoginSteps{
         assertTrue(new MainPage().logInButton.isDisplayed());
     }
 
-    @When("enter data {String} and {String} a registered user")
+
+    @When("enter data login{string} and password{string} a registered user")
     public void enterDataLoginAndPasswordARegisteredUser(String login, String password) {
         new LoginPage().loginAs(login,password);
+    }
+
+
+    @When("enter data login{word} and password{word} a registered user")
+    public void enterDataLoginLoginAndPasswordPasswordARegisteredUser(String login, String password) {
+        new LoginPage().loginAs(login,password);
+    }
+
+    @Then("we will see the Welcome message{string}")
+    public void weWillSeeTheWelcomeMessageLogin(String login) {
+        assertEquals("Welcome " + login, new MainPage()
+                .getWelcomeText());
     }
 }

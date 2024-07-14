@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a10247b-c415-460b-a9ac-19be148af9eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/RunCucumberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/context/TestContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/utils/ConfigurationReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/utils/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/configuration.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/positivLoginTestPage.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/junit-platform.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/configuration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/positivLoginTestPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/positivLoginTestPage.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.All Features in: test.executor": "Run",
-    "Cucumber Java.Feature: positivLoginTestPage.executor": "Run",
-    "Cucumber Java.Scenario: login to the site as a registered user.executor": "Run",
-    "Maven.CucumberStart [test].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/GIT/CucumberStart",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.All Features in: test.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: positivLoginTestPage.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: login to the site as a registered user.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CucumberStart [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GIT/CucumberStart&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="CucumberHomeWork.pages" />
@@ -144,8 +128,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Cucumber Java.Feature: positivLoginTestPage" />
-        <item itemvalue="Cucumber Java.All Features in: test" />
         <item itemvalue="Cucumber Java.Scenario: login to the site as a registered user" />
+        <item itemvalue="Cucumber Java.All Features in: test" />
       </list>
     </recent_temporary>
   </component>
