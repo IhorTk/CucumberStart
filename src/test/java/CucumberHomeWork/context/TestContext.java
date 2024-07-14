@@ -21,7 +21,7 @@ public class TestContext {
     public static JavascriptExecutor js;
     public static Actions actions;
     public static Alert alert;
-    public static Scenario scenario;
+    public static Scenario scenario ;
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -36,7 +36,7 @@ public class TestContext {
     public static void closeDriver() {
         if (driver != null) {
             driver.quit();
-            driver = null ;
+            driver = null;
         }
     }
 }
