@@ -40,16 +40,13 @@ public class LoginPage extends BasePage {
         new MainPage();
     }
 
-    public String inCorrectDataUser(String login, String password) {
-        login(login, password);
+    public String inCorrectDataUser() {
         wait.until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
-        String messageAlert = alert.getText();
-        alert.accept();
-        return messageAlert;
+        return alert.getText();
     }
 
-    private void login(String login, String password) {
+    public void login(String login, String password) {
         new MainPage().logInButton.click();
         inputUserName.sendKeys(login);
         inputUserPassword.sendKeys(password);
