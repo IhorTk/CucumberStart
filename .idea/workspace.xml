@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a10247b-c415-460b-a9ac-19be148af9eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.allure/history/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/categories-trend.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.allure/history/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/duration-trend.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.allure/history/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/history-trend.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.allure/history/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/history.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.allure/history/retry-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/retry-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/bin/allure" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/bin/allure.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/config/allure-cucumber.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/config/allure-junit.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/config/allure.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/lib/config/jetty-logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/lib/config/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/plugins/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.20.1/plugins/behaviors-plugin/allure-plugin.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/positivLoginTestPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginTestPage.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,23 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.All Features in: test.executor": "Run",
-    "Cucumber Java.Feature: positivLoginTestPage.executor": "Run",
-    "Cucumber Java.Scenario: login to the site as a registered user.executor": "Run",
-    "Cucumber Java.Scenario: login with non-existent credentials(login).executor": "Run",
-    "Maven.CucumberStart [test].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/GIT/CucumberStart",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.All Features in: test.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: positivLoginTestPage.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: login to the site as a registered user.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: login with non-existent credentials(login).executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CucumberStart [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CucumberStart [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GIT/CucumberStart&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="CucumberHomeWork.pages" />
@@ -145,6 +147,7 @@
     <configuration name="Scenario: login with non-existent credentials(login)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/LoginTestPage.feature" />
+      <option name="GLUE" value="CucumberHomeWork.steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CucumberStart" />
       <option name="NAME_FILTER" value="^login with non\-existent credentials\(login\)$" />
