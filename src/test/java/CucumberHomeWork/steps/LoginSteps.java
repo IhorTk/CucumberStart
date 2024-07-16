@@ -8,13 +8,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 import static CucumberHomeWork.context.TestContext.alert;
 import static CucumberHomeWork.context.TestContext.scenario;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginSteps{
-    @Given("user is on the main page")
+    @Given("The user is on the main page")
     public void user_is_on_the_main_page() {
         scenario.log("Hallo");
     }
@@ -63,9 +64,9 @@ public class LoginSteps{
         new LoginPage().login(login,password);
     }
 
-    @Then("we will see the Alertuser message{string}")
-    public void weWillSeeTheAlertMessageLogin(String alertNotUser) {
-        assertEquals(alertNotUser,new LoginPage().inCorrectDataUser());
+    @Then("we will see the error User message {string}")
+    public void weWillSeeTheAlertMessageLogin(String alertNotUserExist) {
+        assertEquals(ConfigurationReader.get(alertNotUserExist),new LoginPage().inCorrectDataUser());
     }
 
     @And("user confirm Alert message")
@@ -73,8 +74,9 @@ public class LoginSteps{
         alert.accept();
     }
 
-    @Then("we will see the Alertpassword message{string}")
+    @Then("we will see the error Password message {string}")
     public void weWillSeeTheAlertMessagePassword(String alertWrongPassword) {
-        assertEquals(alertWrongPassword,new LoginPage().inCorrectDataUser());
+        assertEquals(ConfigurationReader.get(alertWrongPassword),new LoginPage().inCorrectDataUser());
     }
+
 }
