@@ -1,6 +1,7 @@
 Feature: New User Registration
 
-  Scenario: try to register an existing user
+  @negative
+  Scenario Outline: try to register an existing user
     Given The user is on the main page
     When press to button Sign up
     And When enter data login<login> and password<password> a registered user

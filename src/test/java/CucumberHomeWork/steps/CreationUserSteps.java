@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CreationUserSteps {
+
     @When("press to button Sign up")
     public void pressToButtonSignUp() {
         new MainPage().signUpButton.click();

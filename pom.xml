@@ -13,90 +13,108 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <maven-plugin-version>3.3.1</maven-plugin-version>
+
+        <allure-maven-version>2.12.0</allure-maven-version>
+        <allure-junit5-version>2.28.0</allure-junit5-version>
+        <allure-cucumber7-jvm-version>2.28.0</allure-cucumber7-jvm-version>
+
         <aspectj.version>1.9.6</aspectj.version>
+
+        <cucumber-version>7.16.0</cucumber-version>
+
+        <junit-jupiter-engine-version>5.10.3</junit-jupiter-engine-version>
+        <junit-platform-suite-version>1.11.0-M2</junit-platform-suite-version>
+
+        <logback-classic-version>1.5.6</logback-classic-version>
+
+        <selenium-driver-version>4.22.0</selenium-driver-version>
+        <selenium-devtools-v120-version>4.18.1</selenium-devtools-v120-version>
+
+        <webdrivermanager-version>5.9.1</webdrivermanager-version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.10.3</version>
+            <version>${junit-jupiter-engine-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.16.0</version>
+            <version>${cucumber-version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>7.18.0</version>
+            <version>${cucumber-version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>1.11.0-M2</version>
+            <version>${junit-platform-suite-version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
-            <version>2.27.0</version>
+            <version>${allure-junit5-version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
-            <version>2.28.0</version>
+            <version>${allure-cucumber7-jvm-version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.6</version>
+            <version>${logback-classic-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-api</artifactId>
-            <version>3.3.1</version>
+            <version>${maven-plugin-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>4.22.0</version>
+            <version>${selenium-driver-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-            <version>4.22.0</version>
+            <version>${selenium-driver-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.9.1</version>
+            <version>${webdrivermanager-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.22.0</version>
+            <version>${selenium-driver-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-devtools-v120</artifactId>
-            <version>4.18.1</version>
+            <version>${selenium-devtools-v120-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-edge-driver</artifactId>
-            <version>4.22.0</version>
+            <version>${selenium-driver-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>4.22.0</version>
+            <version>${selenium-driver-version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -106,7 +124,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>${maven-plugin-version}</version>
                 <configuration>
                     <includes>
                         <include>**/RunCucumberTest.java</include>
@@ -137,12 +155,12 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.12.0</version>
+                <version>${allure-maven-version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>${maven-plugin-version}</version>
                 <executions>
                     <execution>
                         <id>copy-test-history-to</id>

@@ -13,6 +13,7 @@ import static CucumberHomeWork.context.TestContext.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginSteps{
+
     @Given("The user is on the main page")
     public void user_is_on_the_main_page() {
         scenario.log("Hallo");

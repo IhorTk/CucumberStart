@@ -55,6 +55,7 @@ public class MainPage extends BasePage {
 
 
     public String getWelcomeText() {
+
         return welcomeText.getText();
     }
 
@@ -67,28 +68,23 @@ public class MainPage extends BasePage {
     public MainPage sortingArticles(String nameArticles) {
 
         switch (nameArticles.toLowerCase()) {
-            case "phone" -> sortItemPhone.click();
-            case "monitor" -> sortItemMonitor.click();
-            case "notebook" -> sortItemNotebook.click();
+            case "phones" -> sortItemPhone.click();
+            case "monitors" -> sortItemMonitor.click();
+            case "laptops" -> sortItemNotebook.click();
             default -> throw new IllegalStateException("Unexpected value: " + nameArticles.toLowerCase());
         }
-        wait.until(ExpectedConditions.stalenessOf(articlesCards.get(1)));
+        wait.until(ExpectedConditions.stalenessOf(articlesCards.getFirst()));
         return new MainPage();
     }
-
 
     public int amountArticleAll() {
         int amountAll = amountArticle();
         while (nextPageButton.isDisplayed()) {
-            getNextPageButton();
+            nextPageButton.click();
             wait.until(ExpectedConditions.stalenessOf(articlesCards.getLast()));
             amountAll = amountAll + amountArticle();
         }
         return amountAll;
-    }
-
-    public void getNextPageButton() {
-        nextPageButton.click();
     }
 
 }
