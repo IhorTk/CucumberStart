@@ -22,12 +22,6 @@ public class CreationUserPage extends BasePage {
 
 
 
-    public MainPage pressCloseCreateNewUser(){
-        closeCreateNewUser.click();
-        wait.until(ExpectedConditions.stalenessOf(closeCreateNewUser));
-        return new MainPage();
-    }
-
     public String createUserAs(String login, String password) {
         createUser(login, password);
         wait.until(ExpectedConditions.alertIsPresent());
