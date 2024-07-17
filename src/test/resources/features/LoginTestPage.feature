@@ -1,20 +1,20 @@
-Feature: site login test
+Feature: Verifying site login credentials
 
   @positive
   Scenario: login with existing credentials
     Given The user is on the main page
     When enter data a registered user
-    Then we will see the Welcome message
+    Then The user will see the Welcome message
     And log out to the main page
-    Then we will see the Log in button
+    Then The user can see the Log in button
 
   @positive
   Scenario Outline: login with existing credentials
     Given The user is on the main page
     When enter data login<login> and password<password> a registered user
-    Then we will see the Welcome message"<login>"
+    Then The user will see the Welcome message"<login>"
     And log out to the main page
-    Then we will see the Log in button
+    Then The user can see the Log in button
     Examples:
        |  login  | password   |
        | GrauWolf| TraTaTa    |
@@ -24,9 +24,9 @@ Feature: site login test
   Scenario Outline: login with non-existent credentials(login)
     Given The user is on the main page
     When enter data login<login> non-existent credentials and password<password> a registered user
-    Then  we will see the error User message "alertNotUserExist"
-    And user confirm Alert message
-    Then we will see the Log in button
+    Then  The user will see the error User message "alertNotUserExist"
+    And The user confirm Alert message
+
     Examples:
       |  login   | password   |
       | GrauWolf1| TraTaTa    |
@@ -36,9 +36,9 @@ Feature: site login test
   Scenario Outline: login with non-existent credentials(password)
     Given The user is on the main page
     When enter data login<login> non-existent credentials and password<password> a registered user
-    Then  we will see the error Password message "alertWrongPassword"
-    And user confirm Alert message
-    Then we will see the Log in button
+    Then  The user will see the error Password message "alertWrongPassword"
+    And The user confirm Alert message
+
     Examples:
       |  login   | password   |
       | GrauWolf | TraTaTa1   |

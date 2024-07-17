@@ -9,10 +9,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
-import static CucumberHomeWork.context.TestContext.alert;
-import static CucumberHomeWork.context.TestContext.scenario;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static CucumberHomeWork.context.TestContext.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginSteps{
     @Given("The user is on the main page")
@@ -22,30 +20,31 @@ public class LoginSteps{
 
     @When("enter data a registered user")
     public void enterDataARegisteredUser() {
-        new LoginPage().loginRegisteredUser();
+        new LoginPage().loginAsRegisteredUser();
     }
 
-    @Then("we will see the Welcome message")
-    public void weWillSeeTheWelcomeMessage() {
+    @Then("The user will see the Welcome message")
+    public void userWillSeeTheWelcomeMessage() {
         assertEquals("Welcome " + ConfigurationReader.get("standard_login"), new MainPage()
                 .getWelcomeText());
     }
 
     @And("log out to the main page")
     public void logOutToTheMainPage() {
-        new LoginPage().logOut();
+        new LoginPage().logOutButton.click();
     }
 
-    @Then("we will see the Log in button")
-    public void weWillSeeTheLogInButton() {
+
+    @Then("The user can see the Log in button")
+    public void theUserDoesNotSeeTheWelcomeMessage() {
         assertTrue(new MainPage().logInButton.isDisplayed());
     }
 
 
-    @When("enter data login{string} and password{string} a registered user")
-    public void enterDataLoginAndPasswordARegisteredUser(String login, String password) {
-        new LoginPage().loginAs(login,password);
-    }
+//    @When("enter data login{string} and password{string} a registered user")
+//    public void enterDataLoginAndPasswordARegisteredUser(String login, String password) {//*
+//        new LoginPage().loginAs(login,password);
+//    }
 
 
     @When("enter data login{word} and password{word} a registered user")
@@ -53,8 +52,8 @@ public class LoginSteps{
         new LoginPage().loginAs(login,password);
     }
 
-    @Then("we will see the Welcome message{string}")
-    public void weWillSeeTheWelcomeMessageLogin(String login) {
+    @Then("The user will see the Welcome message{string}")
+    public void userWillSeeTheWelcomeMessageLogin(String login) {
         assertEquals("Welcome " + login, new MainPage()
                 .getWelcomeText());
     }
@@ -64,18 +63,18 @@ public class LoginSteps{
         new LoginPage().login(login,password);
     }
 
-    @Then("we will see the error User message {string}")
-    public void weWillSeeTheAlertMessageLogin(String alertNotUserExist) {
+    @Then("The user will see the error User message {string}")
+    public void userWillSeeTheAlertMessageLogin(String alertNotUserExist) {
         assertEquals(ConfigurationReader.get(alertNotUserExist),new LoginPage().inCorrectDataUser());
     }
 
-    @And("user confirm Alert message")
+    @And("The user confirm Alert message")
     public void userConfirmAlertMessage() {
         alert.accept();
     }
 
-    @Then("we will see the error Password message {string}")
-    public void weWillSeeTheAlertMessagePassword(String alertWrongPassword) {
+    @Then("The user will see the error Password message {string}")
+    public void userWillSeeTheAlertMessagePassword(String alertWrongPassword) {
         assertEquals(ConfigurationReader.get(alertWrongPassword),new LoginPage().inCorrectDataUser());
     }
 

@@ -10,6 +10,9 @@ import static CucumberHomeWork.context.TestContext.wait;
 
 public class MainPage extends BasePage {
 
+    @FindBy(css = "#signin2")
+    public WebElement signUpButton;
+
     @FindBy(css = "#login2")
     public WebElement logInButton;
 

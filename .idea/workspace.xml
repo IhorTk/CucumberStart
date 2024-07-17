@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a10247b-c415-460b-a9ac-19be148af9eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/InternalPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/CreationUserPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/CreationUserSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/CreationUserPageTest.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/history/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/categories-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/history/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/duration-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/history/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/history-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/history/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/history/retry-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/history/retry-trend.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/InternalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/InternalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CucumberHomeWork/steps/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/configuration.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/LoginTestPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginTestPage.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

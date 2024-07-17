@@ -9,9 +9,8 @@ import java.util.List;
 public class InternalPage extends BasePage {
 
 
-    @FindBy(css = "#navbarExample")
+    @FindBy(xpath = "//*[@id=\"navbarExample\"]/ul/li")
     public static List<WebElement> navigationButtonPanel;
-    ////*[@id="nameofuser"]
 
     @FindBy(css = ".navbar-brand#nava")
     public WebElement logBrandHeader;
