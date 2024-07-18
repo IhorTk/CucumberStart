@@ -41,13 +41,13 @@ public class MainPage extends BasePage {
     public List<WebElement> articlesCards;
 
 
-    public MainPage sortingArticles(String nameArticles) {
+    public MainPage sortingArticles(String groupArticles) {
 
-        switch (nameArticles.toLowerCase()) {
+        switch (groupArticles.toLowerCase()) {
             case "phones" -> sortItemPhone.click();
             case "monitors" -> sortItemMonitor.click();
             case "laptops" -> sortItemNotebook.click();
-            default -> throw new IllegalStateException("Unexpected value: " + nameArticles.toLowerCase());
+            default -> throw new IllegalStateException("Unexpected value: " + groupArticles);
         }
         wait.until(ExpectedConditions.stalenessOf(articlesCards.getLast()));
         return new MainPage();
@@ -61,6 +61,11 @@ public class MainPage extends BasePage {
             amountAll = amountAll + articlesCards.size();
         }
         return amountAll;
+    }
+    public CartPage getGoToCart() {
+        goToCart.click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().rowsListOrdersTable));
+        return new CartPage();
     }
 
 }
