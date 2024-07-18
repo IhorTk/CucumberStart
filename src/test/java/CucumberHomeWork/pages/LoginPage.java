@@ -9,8 +9,6 @@ import static CucumberHomeWork.context.TestContext.*;
 
 public class LoginPage extends BasePage {
 
-
-
     @FindBy(css = "#loginusername")
     public WebElement inputUserName;
 
@@ -19,9 +17,6 @@ public class LoginPage extends BasePage {
 
     @FindBy(css = "button.btn-primary[onclick='logIn()']")
     public WebElement inputLogin;
-
-    @FindBy(xpath = "//*[@id=\"logInModal\"]//button[contains(text(),'Close')]")
-    public WebElement logInCloseButton;
 
     @FindBy(css = "#logout2")
     public WebElement logOutButton;
@@ -36,13 +31,6 @@ public class LoginPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(new MainPage().welcomeText));
         return new MainPage();
     }
-
-    public MainPage pressLogInCloseButton(){
-        logInCloseButton.click();
-        wait.until(ExpectedConditions.stalenessOf(logInCloseButton));
-        return new MainPage();
-    }
-
 
     public String inCorrectDataUser() {
         wait.until(ExpectedConditions.alertIsPresent());

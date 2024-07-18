@@ -17,10 +17,6 @@ public class CreationUserPage extends BasePage {
     @FindBy(css = "button.btn-primary[onclick='register()']")
     public WebElement okCreateNewUser;
 
-    @FindBy(xpath = "//*[@id=\"signInModal\"]//button[text()='Close']")
-    public WebElement closeCreateNewUser;
-
-
 
     public String createUserAs(String login, String password) {
         createUser(login, password);

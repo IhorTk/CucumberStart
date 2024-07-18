@@ -27,7 +27,7 @@ public class LoginSteps{
     @Then("The user will see the Welcome message")
     public void userWillSeeTheWelcomeMessage() {
         assertEquals("Welcome " + ConfigurationReader.get("standard_login"), new MainPage()
-                .getWelcomeText());
+                .welcomeText.getText());
     }
 
     @And("log out to the main page")
@@ -49,7 +49,7 @@ public class LoginSteps{
     @Then("The user will see the Welcome message{string}")
     public void userWillSeeTheWelcomeMessageLogin(String login) {
         assertEquals("Welcome " + login, new MainPage()
-                .getWelcomeText());
+                .welcomeText.getText());
     }
 
     @When("enter data login{word} non-existent credentials and password{word} a registered user")

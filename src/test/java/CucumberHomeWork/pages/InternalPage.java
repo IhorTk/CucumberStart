@@ -21,5 +21,10 @@ public class InternalPage extends BasePage {
     @FindBy(css = "a.nav-link[href='index.html']")
     public WebElement homeButton;
 
+    public MainPage getHomeButton() {
+        homeButton.click();
+        return new MainPage();
+    }
+
 
 }

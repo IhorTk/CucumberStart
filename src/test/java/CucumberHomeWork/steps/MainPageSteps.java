@@ -18,11 +18,7 @@ public class MainPageSteps {
 
     @When("sorting products by group{word}, there should be {int} of them")
     public void sortingProductsByGroupThereShouldBeAmountOfThem(String group, int amount) {
-        assertEquals(amount, new MainPage().sortingArticles(group).amountArticle());
+        assertEquals(amount, new MainPage().sortingArticles(group).articlesCards.size());
     }
 
-//    @When("sorting products by group {string}, there should be {int} of them")
-//    public void sortingProductsByGroupThereShouldBeOfThem(String group, Integer amount) {
-//        assertEquals(amount, new MainPage().sortingArticles(group).amountArticle());
-//    }
 }
