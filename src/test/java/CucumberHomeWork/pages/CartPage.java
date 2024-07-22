@@ -28,19 +28,6 @@ public class CartPage extends BasePage {
     public WebElement goPlaceOrderButton;
 
 
-    public MainPage addThreeArticleToCartBase(String nameArticle1, String nameArticle2, String nameArticle3) {
-        addOneArticleToCartBase(nameArticle1);
-        addOneArticleToCartBase(nameArticle2);
-        return addOneArticleToCartBase(nameArticle3);
-    }
-
-
-    public MainPage addOneArticleToCartBase(String nameArticle) {
-        new MainPage().sortingArticles(nameArticle);
-        return addArticleToCartAny(ConfigurationReader.get(nameArticle));
-    }
-
-
     public MainPage addArticleToCartAny(String nameArticle) {
         new ArticlePage().searchArticle(nameArticle);
         addArticleToCart();
@@ -69,6 +56,7 @@ public class CartPage extends BasePage {
         }
         deleteArticleButton.get(count).click();
         wait.until(ExpectedConditions.stalenessOf(rowsListOrdersTable.getFirst()));
+        wait.until(ExpectedConditions.visibilityOf(totalPrise));
         return new CartPage();
     }
 

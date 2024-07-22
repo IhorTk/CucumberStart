@@ -3,7 +3,6 @@ package CucumberHomeWork.steps;
 import CucumberHomeWork.pages.CartPage;
 import CucumberHomeWork.pages.MainPage;
 import CucumberHomeWork.utils.Cart;
-import CucumberHomeWork.utils.TableWork;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -17,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartPageSteps {
+
 
     @DataTableType
     public Cart addProduct(Map<String,String> table){
@@ -40,9 +40,9 @@ public class CartPageSteps {
 
     @Then("Check that the {string} has been added to the cart and the {int} is correct")
     public void checkThatTheProductHasBeenAddedToTheCartAndThePriseIsCorrect(String product, int price) {
-        assertEquals(1, new CartPage().rowsListOrdersTable.size());
+        assertEquals(1, tableWork.getListRows(new CartPage().tableCartProduct).size()-1);
         assertEquals(price, Long.parseLong(new CartPage().totalPrise.getText()));
-        assertTrue(new CartPage().rowsListOrdersTable.getFirst().getText().contains(product));
+        assertTrue(tableWork.getListRows(new CartPage().tableCartProduct).get(1).getText().contains(product));
     }
 
     @When("The user takes turns adding product to the cart")
@@ -54,6 +54,14 @@ public class CartPageSteps {
        }
     }
 
+
+    @Then("Remove one item from cart {string}")
+    public void removeOneItemFromCart(String nameProduct) {
+        new CartPage().remoteArticleFromCart(nameProduct);
+
+    }
+
+
     @And("Check sure all items in your cart and total price is correct")
     public void checkSureAllItemsInYourCartAndTotalPriceIsCorrect(List<Cart> carts) {
 
@@ -62,5 +70,7 @@ public class CartPageSteps {
         tableWork.getTotalSum(new CartPage().tableCartProduct, "Price");
         assertEquals(tableWork.getListRows(new CartPage().tableCartProduct).size()-1, carts.size());
     }
+
+
 }
 

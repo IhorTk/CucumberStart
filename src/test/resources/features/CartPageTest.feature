@@ -27,3 +27,17 @@ Feature: Cart Page management
       | Laptops  | MacBook Pro       | 1100  |
       | Monitors | Apple monitor 24  | 400   |
 
+
+  Scenario: Remove product from cart
+    Given The user is on the main page
+    When The user takes turns adding product to the cart
+      | group    | title             | price |
+      | Laptops  | MacBook Pro       | 1100  |
+      | Phones   | Samsung galaxy s7 | 800   |
+      | Monitors | Apple monitor 24  | 400   |
+    Then Go to cart
+    Then Remove one item from cart "Apple monitor 24"
+    And Check sure all items in your cart and total price is correct
+      | group    | title             | price |
+      | Laptops  | MacBook Pro       | 1100  |
+      | Phones   | Samsung galaxy s7 | 800   |

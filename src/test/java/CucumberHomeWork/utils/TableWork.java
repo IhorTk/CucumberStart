@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TableWork {
-//работа с таблицами
+    public TableWork() {
+    }
+    //работа с таблицами
 
     //олучение List<WebElement> строк
     public List<WebElement> getListRows(WebElement table) {
@@ -32,13 +34,9 @@ public class TableWork {
         List<WebElement> listCol = new ArrayList<>();
         int indexCol = getIndexCollTable(table, colName);
         List<WebElement> rows = getListRows(table);
-        for (WebElement row : rows) {
-            List<WebElement> cols = row.findElements(By.xpath(".//td"));
-            for (int i = 0; i < cols.size(); i++) {
-                if (i == indexCol) {
-                    listCol.add(cols.get(i));
-                }
-            }
+        for (int i = 1; i <rows.size() ; i++) {
+            List<WebElement> colls = rows.get(i).findElements(By.xpath(".//td"));
+            listCol.add(colls.get(indexCol));
         }
         return listCol;
     }
