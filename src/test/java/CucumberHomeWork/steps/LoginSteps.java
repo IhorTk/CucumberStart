@@ -16,7 +16,9 @@ public class LoginSteps{
 
     @Given("The user is on the main page")
     public void user_is_on_the_main_page() {
-        scenario.log("Hallo");
+        if (new MainPage().categoriesButton.isDisplayed()) {
+            scenario.log("Hallo");
+        }
     }
 
     @When("enter data a registered user")

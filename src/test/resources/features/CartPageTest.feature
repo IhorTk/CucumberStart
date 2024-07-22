@@ -1,5 +1,7 @@
+
 Feature: Cart Page management
 
+  @positive
   Scenario Outline: Adding one product to cart
     Given The user is on the main page
     When Sort products into '<group>'
@@ -13,6 +15,7 @@ Feature: Cart Page management
       | Laptops  | MacBook Pro       | 1100  |
       | Monitors | Apple monitor 24  | 400   |
 
+  @positive
   Scenario: Adding multiple product to cart
     Given The user is on the main page
     When The user takes turns adding product to the cart
@@ -27,7 +30,7 @@ Feature: Cart Page management
       | Laptops  | MacBook Pro       | 1100  |
       | Monitors | Apple monitor 24  | 400   |
 
-
+  @positive
   Scenario: Remove product from cart
     Given The user is on the main page
     When The user takes turns adding product to the cart

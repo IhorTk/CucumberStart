@@ -64,7 +64,8 @@ public class MainPage extends BasePage {
     }
     public CartPage getGoToCart() {
         goToCart.click();
-        wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().rowsListOrdersTable));
+        wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
+        wait.until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
         return new CartPage();
     }
 

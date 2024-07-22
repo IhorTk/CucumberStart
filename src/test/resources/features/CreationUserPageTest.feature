@@ -1,3 +1,4 @@
+
 Feature: New User Registration
 
   @negative

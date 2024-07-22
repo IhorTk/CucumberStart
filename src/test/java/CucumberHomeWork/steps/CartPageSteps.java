@@ -38,10 +38,10 @@ public class CartPageSteps {
         new MainPage().getGoToCart();
     }
 
-    @Then("Check that the {string} has been added to the cart and the {int} is correct")
-    public void checkThatTheProductHasBeenAddedToTheCartAndThePriseIsCorrect(String product, int price) {
+    @Then("Check that the {string} has been added to the cart and the {double} is correct")
+    public void checkThatTheProductHasBeenAddedToTheCartAndThePriseIsCorrect(String product, double price) {
         assertEquals(1, tableWork.getListRows(new CartPage().tableCartProduct).size()-1);
-        assertEquals(price, Long.parseLong(new CartPage().totalPrise.getText()));
+        assertEquals(price, Double.parseDouble(new CartPage().totalPrise.getText()));
         assertTrue(tableWork.getListRows(new CartPage().tableCartProduct).get(1).getText().contains(product));
     }
 

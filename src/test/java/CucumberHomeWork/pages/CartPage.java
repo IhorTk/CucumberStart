@@ -55,7 +55,7 @@ public class CartPage extends BasePage {
             count++;
         }
         deleteArticleButton.get(count).click();
-        wait.until(ExpectedConditions.stalenessOf(rowsListOrdersTable.getFirst()));
+        wait.until(ExpectedConditions.stalenessOf(rowsListOrdersTable.getLast()));
         wait.until(ExpectedConditions.visibilityOf(totalPrise));
         return new CartPage();
     }
