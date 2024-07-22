@@ -62,11 +62,10 @@ public class MainPage extends BasePage {
         }
         return amountAll;
     }
-    public CartPage getGoToCart() {
+    public void getGoToCart() {
         goToCart.click();
         wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
         wait.until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
-        return new CartPage();
     }
 
 }

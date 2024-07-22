@@ -9,14 +9,8 @@ public class ArticlePage extends BasePage {
     @FindBy(css = ".btn-success")
     public WebElement articleToCartButton;
 
-    @FindBy(css = "h2.name")
-    public WebElement articleName;
-
-
-    public CartPage getAddToCart() {
-
+    public void getAddToCart() {
         articleToCartButton.click();
-        return new CartPage();
     }
 
     public void searchArticle(String nameArticle) {

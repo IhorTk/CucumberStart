@@ -22,14 +22,13 @@ public class LoginPage extends BasePage {
     public WebElement logOutButton;
 
 
-    public MainPage loginAsRegisteredUser() {
-        return loginAs(ConfigurationReader.get("standard_login"), ConfigurationReader.get("standart_password"));
+    public void loginAsRegisteredUser() {
+        loginAs(ConfigurationReader.get("standard_login"), ConfigurationReader.get("standart_password"));
     }
 
-    public MainPage loginAs(String login, String password) {
+    public void loginAs(String login, String password) {
         login(login, password);
         wait.until(ExpectedConditions.visibilityOf(new MainPage().welcomeText));
-        return new MainPage();
     }
 
     public String inCorrectDataUser() {

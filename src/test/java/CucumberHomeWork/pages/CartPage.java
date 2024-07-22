@@ -28,11 +28,10 @@ public class CartPage extends BasePage {
     public WebElement goPlaceOrderButton;
 
 
-    public MainPage addArticleToCartAny(String nameArticle) {
+    public void addArticleToCartAny(String nameArticle) {
         new ArticlePage().searchArticle(nameArticle);
         addArticleToCart();
         new InternalPage().getHomeButton();
-        return new MainPage();
     }
 
 
@@ -46,7 +45,7 @@ public class CartPage extends BasePage {
     }
 
 
-    public CartPage remoteArticleFromCart(String nameArticle) {
+    public void remoteArticleFromCart(String nameArticle) {
         int count = 0;
         for (WebElement order : rowsListOrdersTable) {
             if (order.getText().contains(nameArticle)) {
@@ -57,13 +56,11 @@ public class CartPage extends BasePage {
         deleteArticleButton.get(count).click();
         wait.until(ExpectedConditions.stalenessOf(rowsListOrdersTable.getLast()));
         wait.until(ExpectedConditions.visibilityOf(totalPrise));
-        return new CartPage();
     }
 
 
-    public PlaceOrderPage goToPlaceOrder() {
+    public void goToPlaceOrder() {
         goPlaceOrderButton.click();
-        return new PlaceOrderPage();
     }
 
 }
