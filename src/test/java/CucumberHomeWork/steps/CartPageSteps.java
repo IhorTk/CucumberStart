@@ -2,14 +2,26 @@ package CucumberHomeWork.steps;
 
 import CucumberHomeWork.pages.CartPage;
 import CucumberHomeWork.pages.MainPage;
+import CucumberHomeWork.utils.Cart;
+import CucumberHomeWork.utils.TableWork;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+import java.util.Map;
+
+import static CucumberHomeWork.context.TestContext.tableWork;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartPageSteps {
+
+    @DataTableType
+    public Cart addProduct(Map<String,String> table){
+        return new Cart( table.get("group"), table.get("title"), table.get("price"));
+    }
 
     @When("Sort products into {string}")
     public void sortProductsIntoGroup(String group) {
@@ -33,12 +45,22 @@ public class CartPageSteps {
         assertTrue(new CartPage().rowsListOrdersTable.getFirst().getText().contains(product));
     }
 
+    @When("The user takes turns adding product to the cart")
 
-//    @When("The user takes turns finding {string} by {string} and adding them to the cart")
-//    public void theUserTakesTurnsFindingProductByGroupAndAddingThemToTheCart() {
-//    }
-//
-//    @And("Check that  all {string} has been added to the cart and the {int} is correct")
-//    public void checkThatAllProductHasBeenAddedToTheCartAndThePriceIsCorrect() {
-//    }
+    public void theUserTakesTurnsAddingProductToTheCart(List<Cart> carts) {
+       for (Cart cart:carts){
+           new MainPage().sortingArticles(cart.group);
+           new CartPage().addArticleToCartAny(cart.title);
+       }
+    }
+
+    @And("Check sure all items in your cart and total price is correct")
+    public void checkSureAllItemsInYourCartAndTotalPriceIsCorrect(List<Cart> carts) {
+
+        assertEquals(tableWork.getTotalSum(new CartPage().tableCartProduct, "Price"),
+                Double.parseDouble(new CartPage().totalPrise.getText()));
+        tableWork.getTotalSum(new CartPage().tableCartProduct, "Price");
+        assertEquals(tableWork.getListRows(new CartPage().tableCartProduct).size()-1, carts.size());
+    }
 }
+

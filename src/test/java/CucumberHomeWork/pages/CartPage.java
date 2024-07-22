@@ -15,6 +15,9 @@ public class CartPage extends BasePage {
     @FindBy(css = "td>a[onclick^='deleteItem']")
     public List<WebElement> deleteArticleButton;
 
+    @FindBy(xpath = "//*[@id=\"page-wrapper\"]")
+    public WebElement tableCartProduct;
+
     @FindBy(css = "#totalp")
     public WebElement totalPrise;
 
