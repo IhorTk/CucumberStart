@@ -1,6 +1,7 @@
 package CucumberHomeWork.steps;
 
 import CucumberHomeWork.pages.CreationUserPage;
+import CucumberHomeWork.pages.LoginPage;
 import CucumberHomeWork.pages.MainPage;
 import CucumberHomeWork.utils.ConfigurationReader;
 import io.cucumber.java.en.And;
@@ -18,12 +19,12 @@ public class CreationUserSteps {
 
     @And("When enter data login{word} and password{word} a registered user")
     public void whenEnterDataLoginLoginAndPasswordPasswordARegisteredUser(String login, String password) {
-        new CreationUserPage().createUserAs(login,password);
+        new CreationUserPage().createUser(login,password);
     }
 
     @Then("The user will see the error registration message {string}")
     public void weWillSeeTheErrorRegistrationMessage(String string) {
-        assertEquals(ConfigurationReader.get(string), ConfigurationReader.get(string) );
+        assertEquals(ConfigurationReader.get(string), new LoginPage().inCorrectDataUser());
     }
 
 }

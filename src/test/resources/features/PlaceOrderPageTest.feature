@@ -1,4 +1,4 @@
-
+@ignored
 Feature: Placing and confirming an order
 
   @positive

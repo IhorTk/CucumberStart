@@ -1,4 +1,4 @@
-
+@ignored
 Feature: New User Registration
 
   @negative

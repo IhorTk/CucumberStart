@@ -5,9 +5,13 @@ import CucumberHomeWork.utils.ConfigurationReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-import static CucumberHomeWork.context.TestContext.getDriver;
-import static CucumberHomeWork.context.TestContext.closeDriver;
+import java.io.ByteArrayInputStream;
+
+import static CucumberHomeWork.context.TestContext.*;
 
 public class Hooks {
     @Before
@@ -18,6 +22,12 @@ public class Hooks {
 
     @After
     public void afterMethod(){
+        if (scenario.isFailed()){
+            TakesScreenshot ts = (TakesScreenshot) getDriver();
+
+            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(src, "image/png", "screenshot");
+        }
        if(getDriver() !=null){
            closeDriver();
        }

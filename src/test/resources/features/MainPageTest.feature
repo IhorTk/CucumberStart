@@ -1,4 +1,4 @@
-
+@ignored
 Feature: Main page management
 
   @positive

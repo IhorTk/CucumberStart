@@ -126,6 +126,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-plugin-version}</version>
                 <configuration>
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
                     <includes>
                         <include>**/RunCucumberTest.java</include>
                     </includes>

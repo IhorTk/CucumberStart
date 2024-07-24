@@ -18,15 +18,14 @@ public class CreationUserPage extends BasePage {
     public WebElement okCreateNewUser;
 
 
-    public String createUserAs(String login, String password) {
-        createUser(login, password);
+    public String createUserAs() {
         wait.until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
         return alert.getText();
 
     }
 
-    private void createUser(String login, String password) {
+    public void createUser(String login, String password) {
         inputNewUserName.sendKeys(login);
         inputNewUserPassword.sendKeys(password);
         okCreateNewUser.click();
