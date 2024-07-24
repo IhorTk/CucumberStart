@@ -65,7 +65,7 @@ public class MainPage extends BasePage {
     }
     public void getGoToCart() {
         goToCart.click();
-        getWait().until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
+        getWait().until(ExpectedConditions.visibilityOf(new CartPage().tableCartProduct));
         getWait().until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
     }
 

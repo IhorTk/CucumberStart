@@ -15,7 +15,7 @@ public class CartPage extends BasePage {
     @FindBy(css = "td>a[onclick^='deleteItem']")
     public List<WebElement> deleteProductButton;
 
-    @FindBy(xpath = "//*[@id=\"page-wrapper\"]")
+    @FindBy(xpath = "//*[@id='page-wrapper']")
     public WebElement tableCartProduct;
 
     @FindBy(css = "#totalp")
@@ -52,8 +52,8 @@ public class CartPage extends BasePage {
             count++;
         }
         deleteProductButton.get(count).click();
-        getWait().until(ExpectedConditions.stalenessOf(listOrders.getLast()));
-        getWait().until(ExpectedConditions.visibilityOf(totalPrise));
+        getWait().until(ExpectedConditions.stalenessOf(listOrders.getFirst()));
+        getWait().until(ExpectedConditions.stalenessOf(totalPrise));
     }
 
 

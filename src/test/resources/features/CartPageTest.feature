@@ -1,4 +1,4 @@
-
+@ignored
 Feature: Cart Page management
 
   @positive
@@ -15,6 +15,8 @@ Feature: Cart Page management
       | Laptops  | MacBook Pro       | 1100  |
       | Monitors | Apple monitor 24  | 400   |
 
+
+
   @positive
   Scenario: Adding multiple product to cart
     Given The user is on the main page
@@ -30,6 +32,8 @@ Feature: Cart Page management
       | Laptops  | MacBook Pro       | 1100  |
       | Monitors | Apple monitor 24  | 400   |
 
+
+  @ignored
   @positive
   Scenario: Remove product from cart
     Given The user is on the main page

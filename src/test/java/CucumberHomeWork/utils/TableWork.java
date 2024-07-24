@@ -15,13 +15,17 @@ public class TableWork {
 
     //получение List<WebElement> строк таблицы
     public List<WebElement> getListRows(WebElement table) {
-        return table.findElements(By.xpath("*//tr"));
+        return table.findElements(By.xpath(".//tr"));
     }
 
     //получение List<WebElement> строк без головы
     public List<WebElement> getListRowsWithoutHead(WebElement table) {
+        List<WebElement> rowTable = getListRows(table);
+        for (WebElement r:rowTable){
+            System.out.println("r.getText() = " + r.getText());
+        }
         List<WebElement> listRowsWithoutHead = new ArrayList<>();
-        for (int i = 1; i < getListRows(table).size(); i++) {
+        for (int i = 1; i < rowTable.size(); i++) {
             listRowsWithoutHead.add(getListRows(table).get(i));
         }
         return listRowsWithoutHead;
@@ -29,7 +33,7 @@ public class TableWork {
 
     //Получение индекса столбца по названию
     public int getIndexCollTable(WebElement table, String valueHeader) {
-        List<WebElement> header = table.findElements(By.xpath("*//th"));
+        List<WebElement> header = table.findElements(By.xpath(".//th"));
         for (int i = 0; i < header.size(); i++) {
             if (header.get(i).getText().equals(valueHeader)) {
                 return i;
