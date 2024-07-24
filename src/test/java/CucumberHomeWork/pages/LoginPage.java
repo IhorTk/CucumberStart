@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
 
     public void loginAs(String login, String password) {
         login(login, password);
-        wait.until(ExpectedConditions.visibilityOf(new MainPage().welcomeText));
+        getWait().until(ExpectedConditions.visibilityOf(new MainPage().welcomeText));
     }
 
 

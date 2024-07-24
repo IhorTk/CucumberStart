@@ -55,7 +55,7 @@ public class PlaceOrderPage extends BasePage {
 
     public void inputCompleteDataPlaceOrderAs(String name, String country, String city, String card, String month, String year) {
         inputDataPlaceOrder(name, country, city, card, month, year);
-        wait.until(ExpectedConditions.visibilityOf(confirmPurchase));
+        getWait().until(ExpectedConditions.visibilityOf(confirmPurchase));
     }
 
     private void inputDataPlaceOrder(String name, String country, String city, String card, String month, String year) {

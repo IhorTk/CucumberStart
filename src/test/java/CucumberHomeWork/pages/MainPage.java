@@ -6,7 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-import static CucumberHomeWork.context.TestContext.wait;
+import static CucumberHomeWork.context.TestContext.getWait;
+
 
 public class MainPage extends BasePage {
 
@@ -49,7 +50,7 @@ public class MainPage extends BasePage {
             case "laptops" -> sortItemNotebook.click();
             default -> throw new IllegalStateException("Unexpected value: " + groupProducts);
         }
-        wait.until(ExpectedConditions.stalenessOf(productsCards.getFirst()));
+        getWait().until(ExpectedConditions.stalenessOf(productsCards.getFirst()));
         return new MainPage();
     }
 
@@ -57,15 +58,15 @@ public class MainPage extends BasePage {
         int amountAll = productsCards.size();
         while (nextPageButton.isDisplayed()) {
             nextPageButton.click();
-            wait.until(ExpectedConditions.stalenessOf(productsCards.getLast()));
+            getWait().until(ExpectedConditions.stalenessOf(productsCards.getLast()));
             amountAll = amountAll + productsCards.size();
         }
         return amountAll;
     }
     public void getGoToCart() {
         goToCart.click();
-        wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
-        wait.until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
+        getWait().until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
+        getWait().until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
     }
 
 }

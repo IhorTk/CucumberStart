@@ -19,7 +19,7 @@ public class InternalPage extends BasePage {
     }
 
     public String getAlertText() {
-        wait.until(ExpectedConditions.alertIsPresent());
+        getWait().until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
         return alert.getText();
     }

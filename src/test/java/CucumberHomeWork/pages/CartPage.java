@@ -34,7 +34,7 @@ public class CartPage extends BasePage {
 
     public void addProductToCart() {
         new ProductPage().getAddToCart();
-        wait.until(ExpectedConditions.alertIsPresent());
+        getWait().until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
         if (alert.getText().equals(ConfigurationReader.get("alertProduct"))) {
             alert.accept();
@@ -52,8 +52,8 @@ public class CartPage extends BasePage {
             count++;
         }
         deleteProductButton.get(count).click();
-        wait.until(ExpectedConditions.stalenessOf(listOrders.getLast()));
-        wait.until(ExpectedConditions.visibilityOf(totalPrise));
+        getWait().until(ExpectedConditions.stalenessOf(listOrders.getLast()));
+        getWait().until(ExpectedConditions.visibilityOf(totalPrise));
     }
 
 

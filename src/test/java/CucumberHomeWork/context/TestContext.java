@@ -14,32 +14,40 @@ import java.time.Duration;
 
 public class TestContext {
 
-    private TestContext() {
-    }
+   private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+   private static final ThreadLocal<WebDriverWait> waitThreadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<Actions> actionThreadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<JavascriptExecutor> javascriptExecutorThreadLocal = new ThreadLocal<>();
 
-    private static WebDriver driver;
-    public static WebDriverWait wait;
-    public static JavascriptExecutor js;
-    public static Actions actions;
     public static Alert alert;
     public static Scenario scenario ;
     public static TableWork tableWork;
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            driver = DriverFactory.get();
-            wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigurationReader.get("timeout"))));
-            actions = new Actions(driver);
-            js = (JavascriptExecutor) driver;
-            tableWork = new TableWork();
-        }
-        return driver;
+    public static WebDriver getDriver(){
+        return driverThreadLocal.get();
+    }
+    public static WebDriverWait getWait(){
+     return waitThreadLocal.get();
     }
 
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver=null;
-        }
+    public static JavascriptExecutor getJs(){
+        return javascriptExecutorThreadLocal.get();
+    }
+
+    public static Actions getActions(){
+        return actionThreadLocal.get();
+    }
+
+   public static void setDriver(WebDriver driver){
+        driverThreadLocal.set(driver);
+        waitThreadLocal.set(new WebDriverWait(driver,
+                Duration.ofSeconds(Long.parseLong(ConfigurationReader.get("timeout")))));
+        javascriptExecutorThreadLocal.set((JavascriptExecutor) driver);
+        actionThreadLocal.set(new Actions(driver));
+   }
+
+
+    public static void remoteDriver() {
+        driverThreadLocal.remove();
     }
 }
