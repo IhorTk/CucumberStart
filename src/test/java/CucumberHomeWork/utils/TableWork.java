@@ -13,9 +13,18 @@ public class TableWork {
     }
     //работа с таблицами
 
-    //олучение List<WebElement> строк
+    //получение List<WebElement> строк таблицы
     public List<WebElement> getListRows(WebElement table) {
         return table.findElements(By.xpath("*//tr"));
+    }
+
+    //получение List<WebElement> строк без головы
+    public List<WebElement> getListRowsWithoutHead(WebElement table) {
+        List<WebElement> listRowsWithoutHead = new ArrayList<>();
+        for (int i = 1; i < getListRows(table).size(); i++) {
+            listRowsWithoutHead.add(getListRows(table).get(i));
+        }
+        return listRowsWithoutHead;
     }
 
     //Получение индекса столбца по названию
@@ -33,10 +42,10 @@ public class TableWork {
     public List<WebElement> getListColAufValue(WebElement table, String colName) {
         List<WebElement> listCol = new ArrayList<>();
         int indexCol = getIndexCollTable(table, colName);
-        List<WebElement> rows = getListRows(table);
-        for (int i = 1; i <rows.size() ; i++) {
-            List<WebElement> colls = rows.get(i).findElements(By.xpath(".//td"));
-            listCol.add(colls.get(indexCol));
+        List<WebElement> rows = getListRowsWithoutHead(table);
+        for (WebElement row:rows) {
+            List<WebElement> cols = row.findElements(By.xpath(".//td"));
+            listCol.add(cols.get(indexCol));
         }
         return listCol;
     }
@@ -60,10 +69,10 @@ public class TableWork {
         int indexKey = getIndexCollTable(table, key);
         int indexValue = getIndexCollTable(table, value);
 
-        List<WebElement> rowsTable = getListRows(table);
+        List<WebElement> rowsTable = getListRowsWithoutHead(table);
 
-        for (int i = 1; i < rowsTable.size(); i++) {
-            List<WebElement> cols = rowsTable.get(i).findElements(By.xpath(".//td"));
+        for (WebElement row:rowsTable) {
+            List<WebElement> cols = row.findElements(By.xpath(".//td"));
             mapProduct.put(cols.get(indexKey).getText(), cols.get(indexValue).getText());
         }
 

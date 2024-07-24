@@ -13,7 +13,7 @@ public class CartPage extends BasePage {
 
 
     @FindBy(css = "td>a[onclick^='deleteItem']")
-    public List<WebElement> deleteArticleButton;
+    public List<WebElement> deleteProductButton;
 
     @FindBy(xpath = "//*[@id=\"page-wrapper\"]")
     public WebElement tableCartProduct;
@@ -21,40 +21,38 @@ public class CartPage extends BasePage {
     @FindBy(css = "#totalp")
     public WebElement totalPrise;
 
-    @FindBy(css = "#tbodyid>tr")
-    public List<WebElement> rowsListOrdersTable;
-
     @FindBy(css = "button.btn-success")
     public WebElement goPlaceOrderButton;
 
 
-    public void addArticleToCartAny(String nameArticle) {
-        new ArticlePage().searchArticle(nameArticle);
-        addArticleToCart();
+    public void addProductToCartAny(String Product) {
+        new ProductPage().searchProduct(Product);
+        addProductToCart();
         new InternalPage().getHomeButton();
     }
 
 
-    public void addArticleToCart() {
-        new ArticlePage().getAddToCart();
+    public void addProductToCart() {
+        new ProductPage().getAddToCart();
         wait.until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
-        if (alert.getText().equals(ConfigurationReader.get("alertArticle"))) {
+        if (alert.getText().equals(ConfigurationReader.get("alertProduct"))) {
             alert.accept();
         }
     }
 
 
-    public void remoteArticleFromCart(String nameArticle) {
+    public void remoteProductFromCart(String nameProduct) {
+        List<WebElement> listOrders = tableWork.getListRowsWithoutHead(tableCartProduct);
         int count = 0;
-        for (WebElement order : rowsListOrdersTable) {
-            if (order.getText().contains(nameArticle)) {
+        for (WebElement order : listOrders) {
+            if (order.getText().contains(nameProduct)) {
                 break;
             }
             count++;
         }
-        deleteArticleButton.get(count).click();
-        wait.until(ExpectedConditions.stalenessOf(rowsListOrdersTable.getLast()));
+        deleteProductButton.get(count).click();
+        wait.until(ExpectedConditions.stalenessOf(listOrders.getLast()));
         wait.until(ExpectedConditions.visibilityOf(totalPrise));
     }
 

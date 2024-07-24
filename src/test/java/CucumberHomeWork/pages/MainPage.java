@@ -38,27 +38,27 @@ public class MainPage extends BasePage {
     public WebElement nextPageButton;
 
     @FindBy(css = "a.hrefch")
-    public List<WebElement> articlesCards;
+    public List<WebElement> productsCards;
 
 
-    public MainPage sortingArticles(String groupArticles) {
+    public MainPage sortingProducts(String groupProducts) {
 
-        switch (groupArticles.toLowerCase()) {
+        switch (groupProducts.toLowerCase()) {
             case "phones" -> sortItemPhone.click();
             case "monitors" -> sortItemMonitor.click();
             case "laptops" -> sortItemNotebook.click();
-            default -> throw new IllegalStateException("Unexpected value: " + groupArticles);
+            default -> throw new IllegalStateException("Unexpected value: " + groupProducts);
         }
-        wait.until(ExpectedConditions.stalenessOf(articlesCards.getLast()));
+        wait.until(ExpectedConditions.stalenessOf(productsCards.getFirst()));
         return new MainPage();
     }
 
-    public int amountArticleAll() {
-        int amountAll = articlesCards.size();
+    public int amountProductAll() {
+        int amountAll = productsCards.size();
         while (nextPageButton.isDisplayed()) {
             nextPageButton.click();
-            wait.until(ExpectedConditions.stalenessOf(articlesCards.getLast()));
-            amountAll = amountAll + articlesCards.size();
+            wait.until(ExpectedConditions.stalenessOf(productsCards.getLast()));
+            amountAll = amountAll + productsCards.size();
         }
         return amountAll;
     }

@@ -25,12 +25,12 @@ public class CartPageSteps {
 
     @When("Sort products into {string}")
     public void sortProductsIntoGroup(String group) {
-        new MainPage().sortingArticles(group);
+        new MainPage().sortingProducts(group);
     }
 
     @And("Add to cart  {string}.")
     public void addToCartProduct(String product) {
-        new CartPage().addArticleToCartAny(product);
+        new CartPage().addProductToCartAny(product);
     }
 
     @Then("Go to cart")
@@ -40,24 +40,24 @@ public class CartPageSteps {
 
     @Then("Check that the {string} has been added to the cart and the {double} is correct")
     public void checkThatTheProductHasBeenAddedToTheCartAndThePriseIsCorrect(String product, double price) {
-        assertEquals(1, tableWork.getListRows(new CartPage().tableCartProduct).size()-1);
+        assertEquals(1, tableWork.getListRowsWithoutHead(new CartPage().tableCartProduct).size());
         assertEquals(price, Double.parseDouble(new CartPage().totalPrise.getText()));
-        assertTrue(tableWork.getListRows(new CartPage().tableCartProduct).get(1).getText().contains(product));
+        assertTrue(tableWork.getListRowsWithoutHead(new CartPage().tableCartProduct).getFirst().getText().contains(product));
     }
 
     @When("The user takes turns adding product to the cart")
 
     public void theUserTakesTurnsAddingProductToTheCart(List<Cart> carts) {
        for (Cart cart:carts){
-           new MainPage().sortingArticles(cart.group);
-           new CartPage().addArticleToCartAny(cart.title);
+           new MainPage().sortingProducts(cart.group);
+           new CartPage().addProductToCartAny(cart.title);
        }
     }
 
 
     @Then("Remove one item from cart {string}")
     public void removeOneItemFromCart(String nameProduct) {
-        new CartPage().remoteArticleFromCart(nameProduct);
+        new CartPage().remoteProductFromCart(nameProduct);
 
     }
 
@@ -68,7 +68,7 @@ public class CartPageSteps {
         assertEquals(tableWork.getTotalSum(new CartPage().tableCartProduct, "Price"),
                 Double.parseDouble(new CartPage().totalPrise.getText()));
         tableWork.getTotalSum(new CartPage().tableCartProduct, "Price");
-        assertEquals(tableWork.getListRows(new CartPage().tableCartProduct).size()-1, carts.size());
+        assertEquals(tableWork.getListRowsWithoutHead(new CartPage().tableCartProduct).size(), carts.size());
     }
 
 

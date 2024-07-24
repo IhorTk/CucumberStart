@@ -23,6 +23,7 @@ public class CreationUserPage extends BasePage {
         wait.until(ExpectedConditions.alertIsPresent());
         alert = getDriver().switchTo().alert();
         return alert.getText();
+
     }
 
     private void createUser(String login, String password) {
