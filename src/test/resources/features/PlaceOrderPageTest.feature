@@ -25,7 +25,7 @@ Feature: Placing and confirming an order
     Then Go to cart
     When The user go to place order page
     And The user enters incomplete test data to place an order and confirms the entered data
-    Then The user will see the error User message "alertPlaceOrder"
+    Then The user will see the error message "alertPlaceOrder"
     And The user confirm Alert message
 
     Examples:

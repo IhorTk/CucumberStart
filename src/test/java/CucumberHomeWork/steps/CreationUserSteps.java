@@ -1,7 +1,7 @@
 package CucumberHomeWork.steps;
 
 import CucumberHomeWork.pages.CreationUserPage;
-import CucumberHomeWork.pages.LoginPage;
+import CucumberHomeWork.pages.InternalPage;
 import CucumberHomeWork.pages.MainPage;
 import CucumberHomeWork.utils.ConfigurationReader;
 import io.cucumber.java.en.And;
@@ -24,7 +24,7 @@ public class CreationUserSteps {
 
     @Then("The user will see the error registration message {string}")
     public void weWillSeeTheErrorRegistrationMessage(String string) {
-        assertEquals(ConfigurationReader.get(string), new LoginPage().inCorrectDataUser());
+        assertEquals(ConfigurationReader.get(string), new InternalPage().getAlertText());
     }
 
 }

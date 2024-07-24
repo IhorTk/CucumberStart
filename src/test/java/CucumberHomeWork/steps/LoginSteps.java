@@ -4,22 +4,14 @@ import CucumberHomeWork.pages.LoginPage;
 import CucumberHomeWork.pages.MainPage;
 import CucumberHomeWork.utils.ConfigurationReader;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
-import static CucumberHomeWork.context.TestContext.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginSteps{
 
-    @Given("The user is on the main page")
-    public void user_is_on_the_main_page() {
-        if (new MainPage().categoriesButton.isDisplayed()) {
-            scenario.log("Hallo");
-        }
-    }
+
 
     @When("enter data a registered user")
     public void enterDataARegisteredUser() {
@@ -59,19 +51,5 @@ public class LoginSteps{
         new LoginPage().login(login,password);
     }
 
-    @Then("The user will see the error User message {string}")
-    public void userWillSeeTheAlertMessageLogin(String alertNotUserExist) {
-        assertEquals(ConfigurationReader.get(alertNotUserExist),new LoginPage().inCorrectDataUser());
-    }
-
-    @And("The user confirm Alert message")
-    public void userConfirmAlertMessage() {
-        alert.accept();
-    }
-
-    @Then("The user will see the error Password message {string}")
-    public void userWillSeeTheAlertMessagePassword(String alertWrongPassword) {
-        assertEquals(ConfigurationReader.get(alertWrongPassword),new LoginPage().inCorrectDataUser());
-    }
 
 }

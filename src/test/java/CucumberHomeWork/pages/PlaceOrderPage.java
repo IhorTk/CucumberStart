@@ -32,7 +32,7 @@ public class PlaceOrderPage extends BasePage {
     public WebElement okPurchaseButton;
 
     @FindBy(css = "div.sweet-alert.showSweetAlert.visible")
-    public WebElement itogPurschase;
+    public WebElement confirmPurchase;
 
     @FindBy(css = "button.confirm.btn-primary")
     public WebElement confirmPurchaseButton;
@@ -48,18 +48,14 @@ public class PlaceOrderPage extends BasePage {
                 ConfigurationReader.get("month"), ConfigurationReader.get("year"));
     }
 
-    public String inputNoCompleteDataPlaceOrderAs() {
-
+    public void inputNoCompleteDataPlaceOrderAs() {
         inputDataPlaceOrder("", ConfigurationReader.get("country"), ConfigurationReader.get("city"),
                 "", ConfigurationReader.get("month"), ConfigurationReader.get("year"));
-        wait.until(ExpectedConditions.alertIsPresent());
-        alert = getDriver().switchTo().alert();
-        return alert.getText();
     }
 
     public void inputCompleteDataPlaceOrderAs(String name, String country, String city, String card, String month, String year) {
         inputDataPlaceOrder(name, country, city, card, month, year);
-        wait.until(ExpectedConditions.visibilityOf(itogPurschase));
+        wait.until(ExpectedConditions.visibilityOf(confirmPurchase));
     }
 
     private void inputDataPlaceOrder(String name, String country, String city, String card, String month, String year) {

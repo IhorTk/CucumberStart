@@ -26,13 +26,13 @@ public class PlaceOrderPageSteps {
 
     @Then("Check that the data is correct and amount is {string}")
     public void checkThatTheDataIsCorrectAndAmountIsPrice(String sum) {
-        assertTrue(new PlaceOrderPage().itogPurschase.getText()
+        assertTrue(new PlaceOrderPage().confirmPurchase.getText()
                 .contains(ConfigurationReader.get("thanks_message")));
-        assertTrue(new PlaceOrderPage().itogPurschase.getText()
+        assertTrue(new PlaceOrderPage().confirmPurchase.getText()
                 .contains("Name: " + ConfigurationReader.get("name")));
-        assertTrue(new PlaceOrderPage().itogPurschase.getText()
+        assertTrue(new PlaceOrderPage().confirmPurchase.getText()
                 .contains("Card Number: " + ConfigurationReader.get("card")));
-        assertTrue(new PlaceOrderPage().itogPurschase.getText()
+        assertTrue(new PlaceOrderPage().confirmPurchase.getText()
                 .contains("Amount: " + sum));
     }
 

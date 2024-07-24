@@ -31,11 +31,6 @@ public class LoginPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(new MainPage().welcomeText));
     }
 
-    public String inCorrectDataUser() {
-        wait.until(ExpectedConditions.alertIsPresent());
-        alert = getDriver().switchTo().alert();
-        return alert.getText();
-    }
 
     public void login(String login, String password) {
         new MainPage().logInButton.click();

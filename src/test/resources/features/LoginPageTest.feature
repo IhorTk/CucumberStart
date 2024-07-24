@@ -25,7 +25,7 @@ Feature: Verifying site login credentials
   Scenario Outline: login with non-existent credentials(login)
     Given The user is on the main page
     When enter data login<login> non-existent credentials and password<password> a registered user
-    Then The user will see the error User message "alertNotUserExist"
+    Then The user will see the error message "alertNotUserExist"
     And The user confirm Alert message
 
     Examples:
@@ -37,7 +37,7 @@ Feature: Verifying site login credentials
   Scenario Outline: login with non-existent credentials(password)
     Given The user is on the main page
     When enter data login<login> non-existent credentials and password<password> a registered user
-    Then The user will see the error Password message "alertWrongPassword"
+    Then The user will see the error message "alertWrongPassword"
     And The user confirm Alert message
 
     Examples:
