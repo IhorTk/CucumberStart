@@ -22,8 +22,8 @@ public class Hooks {
     public void afterMethod(Scenario scenario) {
         if (scenario.isFailed()) {
             WebDriver driver = getDriver();
-            if (getDriver() != null) {
-                TakesScreenshot ts = (TakesScreenshot) getDriver();
+            if (driver != null) {
+                TakesScreenshot ts = (TakesScreenshot) driver;
 
                 byte[] src = ts.getScreenshotAs(OutputType.BYTES);
                 scenario.attach(src, "image/png", "screenshot");
@@ -32,7 +32,5 @@ public class Hooks {
 
         closeDriver();
     }
-
-}
 
 }

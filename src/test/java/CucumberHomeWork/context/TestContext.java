@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class TestContext {
 
-    private TestContext() {
+    public TestContext() {
     }
 
     private static WebDriver driver;
