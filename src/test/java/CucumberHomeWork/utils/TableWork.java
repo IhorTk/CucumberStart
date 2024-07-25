@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TableWork {
-    public TableWork() {
-    }
+
     //работа с таблицами
 
     //получение List<WebElement> строк таблицы
@@ -21,9 +20,6 @@ public class TableWork {
     //получение List<WebElement> строк без головы
     public List<WebElement> getListRowsWithoutHead(WebElement table) {
         List<WebElement> rowTable = getListRows(table);
-        for (WebElement r:rowTable){
-            System.out.println("r.getText() = " + r.getText());
-        }
         List<WebElement> listRowsWithoutHead = new ArrayList<>();
         for (int i = 1; i < rowTable.size(); i++) {
             listRowsWithoutHead.add(getListRows(table).get(i));

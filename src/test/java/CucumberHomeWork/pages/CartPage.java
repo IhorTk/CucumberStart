@@ -1,6 +1,7 @@
 package CucumberHomeWork.pages;
 
 import CucumberHomeWork.utils.ConfigurationReader;
+import CucumberHomeWork.utils.TableWork;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,6 +24,8 @@ public class CartPage extends BasePage {
 
     @FindBy(css = "button.btn-success")
     public WebElement goPlaceOrderButton;
+
+    public TableWork tableWork = new TableWork();
 
 
     public void addProductToCartAny(String Product) {
@@ -53,7 +56,7 @@ public class CartPage extends BasePage {
         }
         deleteProductButton.get(count).click();
         getWait().until(ExpectedConditions.stalenessOf(listOrders.getFirst()));
-        getWait().until(ExpectedConditions.stalenessOf(totalPrise));
+        getWait().until(ExpectedConditions.visibilityOf(totalPrise));
     }
 
 

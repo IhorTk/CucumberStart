@@ -3,6 +3,7 @@ package CucumberHomeWork.steps;
 import CucumberHomeWork.pages.CartPage;
 import CucumberHomeWork.pages.MainPage;
 import CucumberHomeWork.utils.Cart;
+import CucumberHomeWork.utils.TableWork;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -11,11 +12,12 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 
-import static CucumberHomeWork.context.TestContext.tableWork;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartPageSteps {
+
+    public TableWork tableWork = new TableWork();
 
 
     @DataTableType

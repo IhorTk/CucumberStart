@@ -1,8 +1,6 @@
 package CucumberHomeWork.context;
 
 import CucumberHomeWork.utils.ConfigurationReader;
-import CucumberHomeWork.utils.DriverFactory;
-import CucumberHomeWork.utils.TableWork;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,7 +19,6 @@ public class TestContext {
 
     public static Alert alert;
     public static Scenario scenario ;
-    public static TableWork tableWork;
 
     public static WebDriver getDriver(){
         return driverThreadLocal.get();

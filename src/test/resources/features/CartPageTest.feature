@@ -1,4 +1,4 @@
-@ignored
+
 Feature: Cart Page management
 
   @positive
@@ -33,7 +33,7 @@ Feature: Cart Page management
       | Monitors | Apple monitor 24  | 400   |
 
 
-  @ignored
+
   @positive
   Scenario: Remove product from cart
     Given The user is on the main page
