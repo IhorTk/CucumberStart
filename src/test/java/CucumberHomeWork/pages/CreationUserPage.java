@@ -14,11 +14,4 @@ public class CreationUserPage extends BasePage {
     @FindBy(css = "button.btn-primary[onclick='register()']")
     public WebElement okCreateNewUser;
 
-
-    public void createUser(String login, String password) {
-        inputNewUserName.sendKeys(login);
-        inputNewUserPassword.sendKeys(password);
-        okCreateNewUser.click();
-    }
-
 }

@@ -6,7 +6,7 @@ Feature: New User Registration
     Given The user is on the main page
     When press to button Sign up
     And When enter data login<login> and password<password> a registered user
-    Then  The user will see the error registration message "alertNewUserNo"
+    Then  The user will see the error message "alertNewUserNo"
     And The user confirm Alert message
 
     Examples:

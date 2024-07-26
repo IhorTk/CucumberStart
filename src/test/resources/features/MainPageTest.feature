@@ -14,7 +14,8 @@ Feature: Main page management
   @positive
   Scenario Outline: Checking the quantity of goods on the site by group
     Given The user is on the main page
-    When sorting products by group<group>, there should be <amount> of them
+    When Sort products into '<group>'
+    Then  Check amount all items, there should be <amount> of them
     Examples:
       | group     | amount  |
       | Phones    |  7      |
