@@ -2,11 +2,8 @@ package CucumberHomeWork.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-
-import static CucumberHomeWork.context.TestContext.wait;
 
 public class MainPage extends BasePage {
 
@@ -15,6 +12,12 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "#login2")
     public WebElement logInButton;
+
+    @FindBy(css = "#logout2")
+    public WebElement logOutButton;
+
+    @FindBy(css = "a.nav-link[href='index.html']")
+    public WebElement homeButton;
 
     @FindBy(css = ".list-group-item#cat")
     public WebElement categoriesButton;
@@ -39,33 +42,4 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a.hrefch")
     public List<WebElement> productsCards;
-
-
-    public MainPage sortingProducts(String groupProducts) {
-
-        switch (groupProducts.toLowerCase()) {
-            case "phones" -> sortItemPhone.click();
-            case "monitors" -> sortItemMonitor.click();
-            case "laptops" -> sortItemNotebook.click();
-            default -> throw new IllegalStateException("Unexpected value: " + groupProducts);
-        }
-        wait.until(ExpectedConditions.stalenessOf(productsCards.getFirst()));
-        return new MainPage();
-    }
-
-    public int amountProductAll() {
-        int amountAll = productsCards.size();
-        while (nextPageButton.isDisplayed()) {
-            nextPageButton.click();
-            wait.until(ExpectedConditions.stalenessOf(productsCards.getLast()));
-            amountAll = amountAll + productsCards.size();
-        }
-        return amountAll;
-    }
-    public void getGoToCart() {
-        goToCart.click();
-        wait.until(ExpectedConditions.visibilityOfAllElements(new CartPage().tableCartProduct));
-        wait.until(ExpectedConditions.visibilityOf(new CartPage().totalPrise));
-    }
-
 }
