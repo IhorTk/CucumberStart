@@ -25,13 +25,10 @@ public class PlaceOrderPageSteps {
                 dataUser.get("month"), dataUser.get("year"));
     }
 
-
-
     @When("The user go to place order page")
     public void theUserGoToPlaceOrderPage() {
        cartPage.goPlaceOrderButton.click();
     }
-
 
     @And("The user enters test data to place an order")
     public List<DataUser> theUserEntersTestDataToPlaceAnOrder(List<DataUser> dataUsers) {
@@ -47,12 +44,10 @@ public class PlaceOrderPageSteps {
         return objects;
     }
 
-
     @And("confirms the entered data")
     public void confirmsTheEnteredData() {
         placeOrderPage.okPurchaseButton.click();
     }
-
 
     @Then("Check that the data is correct and amount is {string}")
     public void checkThatTheDataIsCorrectAndAmountIsPrice(String sum) {
@@ -80,6 +75,4 @@ public class PlaceOrderPageSteps {
             placeOrderPage.inputYear.sendKeys(dataUser.year);
         }
     }
-
-
 }

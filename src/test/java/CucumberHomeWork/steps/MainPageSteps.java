@@ -27,7 +27,6 @@ public class MainPageSteps {
         assertEquals(amountAll,amountAllExpected);
     }
 
-
     @Then("Check amount all items, there should be {int} of them")
     public void checkAmountAllItemsThereShouldBeAmountOfThem(int amount) {
         assertEquals(amount, mainPage.productsCards.size());

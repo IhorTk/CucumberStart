@@ -7,7 +7,6 @@ import java.util.List;
 
 public class CartPage extends BasePage {
 
-
     @FindBy(css = "td>a[onclick^='deleteItem']")
     public List<WebElement> deleteProductButton;
 
@@ -19,6 +18,4 @@ public class CartPage extends BasePage {
 
     @FindBy(css = "button.btn-success")
     public WebElement goPlaceOrderButton;
-
-
 }

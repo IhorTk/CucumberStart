@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-
-
 public class MainPage extends BasePage {
 
     @FindBy(css = "#signin2")
@@ -44,6 +42,5 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a.hrefch")
     public List<WebElement> productsCards;
-
 
 }

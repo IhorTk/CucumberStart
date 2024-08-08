@@ -40,8 +40,4 @@ public class LoginSteps{
         assertTrue(mainPage.logInButton.isDisplayed());
     }
 
-
-
-
-
 }

@@ -27,12 +27,10 @@ public class Hooks {
             WebDriver driver = getDriver();
             if (driver != null) {
                 TakesScreenshot ts = (TakesScreenshot) driver;
-
                 byte[] src = ts.getScreenshotAs(OutputType.BYTES);
                 scenario.attach(src, "image/png", "screenshot");
             }
         }
-
         closeDriver();
     }
 

@@ -13,16 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OverallSteps {
     MainPage mainPage = new MainPage();
 
-
-
-
     @Given("The user is on the main page")
     public void user_is_on_the_main_page() {
         if (mainPage.categoriesButton.isDisplayed()) {
             scenario.log("Hallo");
         }
     }
-
 
     @Then("The user will see the error message {string}")
     public void userWillSeeTheAlertMessageLogin(String alertDisplayed) {

@@ -9,5 +9,4 @@ public class ProductPage extends BasePage {
     @FindBy(css = ".btn-success")
     public WebElement productToCartButton;
 
-
 }

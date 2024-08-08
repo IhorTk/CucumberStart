@@ -14,5 +14,4 @@ public class LoginPage extends BasePage {
     @FindBy(css = "button.btn-primary[onclick='logIn()']")
     public WebElement inputLogin;
 
-
 }

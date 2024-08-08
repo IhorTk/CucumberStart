@@ -10,5 +10,4 @@ public class Cart {
         this.title = title;
         this.price = price;
     }
-
 }
