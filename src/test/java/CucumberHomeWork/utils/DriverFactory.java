@@ -17,6 +17,7 @@ public class DriverFactory {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
+                options.addArguments("--disable-search-engine-choice-screen");
                 if (ConfigurationReader.get("headless").equalsIgnoreCase("true")) {
                     options.addArguments("--headless");
                 }
